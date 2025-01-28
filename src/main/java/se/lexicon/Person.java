@@ -1,20 +1,20 @@
 package se.lexicon;
 
 public class Person {
-
+    //Fields
     private static int referenceId = 0;
     private int id;
     private String firstName;
     private String lastName;
     private String email;
-
+    //Constructor(s)
     public Person(String firstName, String lastName, String email){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         id = referenceId++ + 1;
     }
-
+    //Getters & Setters
     public int getId(){
         return id;
     }
@@ -43,12 +43,13 @@ public class Person {
         this.email = email;
     }
 
+    //Methods
     public StringBuilder getSummary(){
         var sb = new StringBuilder();
         sb.append("Person Summary -> ")
                 .append("Id: ").append(getId())
-                .append(" Name: ").append(getFirstName()).append(" ").append(getLastName())
-                .append(" Email: ").append(getEmail());
+                .append(" | Name: ").append(getFirstName()).append(" ").append(getLastName())
+                .append(" | Email: ").append(getEmail());
 
         return sb;
     }

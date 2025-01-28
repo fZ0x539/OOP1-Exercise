@@ -97,19 +97,19 @@ public class TodoItem {
         var sb = new StringBuilder();
         sb.append("TodoItem Summary -> ")
                 .append("Id: ").append(getId())
-                .append("\nTitle: ").append(getTitle());
+                .append(" | Title: ").append(getTitle());
 
         if(taskDescription != null){
-            sb.append("\nDescription: ").append(getTaskDescription());
+            sb.append(" | Description: ").append(getTaskDescription());
         }
         if (isDone()){
-            sb.append("\nIs Done? ").append(isDone());
+            sb.append(" | Is Done? ").append(isDone());
         } else {
-            sb.append("\nDeadline: ").append(getDeadLine())
-                    .append("\nIs overdue? ").append(isOverdue());
+            sb.append(" | Deadline: ").append(getDeadLine())
+                    .append("| Is overdue? ").append(isOverdue());
         }
         if(creator != null){
-        sb.append("\nCreated by: ").append(getCreator().getFirstName()).append("\n");
+        sb.append(" | Created by: ").append(getCreator().getFirstName());
         }
 
         return sb;
