@@ -1,0 +1,97 @@
+<Project>
+  <Name>Todo IT</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Application</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Person</Name>
+        <Access>Public</Access>
+        <Location left="911" top="483" />
+        <Size width="326" height="334" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">static int referenceId</Member>
+        <Member type="Field">int id</Member>
+        <Member type="Field">private String firstName</Member>
+        <Member type="Field">private String lastName</Member>
+        <Member type="Field">private String email</Member>
+        <Member type="Constructor">public Person(String firstName, String lastName, String email)</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public String getFirstName()</Member>
+        <Member type="Method">public void setFirstName(String firstName)</Member>
+        <Member type="Method">public String getLastName()</Member>
+        <Member type="Method">public void setLastName(String lastName)</Member>
+        <Member type="Method">public String getEmail()</Member>
+        <Member type="Method">public void setEmail(String email)</Member>
+        <Member type="Method">public StringBuilder getSummary()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TodoItem</Name>
+        <Access>Public</Access>
+        <Location left="561" top="430" />
+        <Size width="291" height="426" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">static int referenceId</Member>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">private String title</Member>
+        <Member type="Field">String taskDescription</Member>
+        <Member type="Field">LocalDate deadLine</Member>
+        <Member type="Field">boolean done</Member>
+        <Member type="Field">Person creator</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public String getTitle()</Member>
+        <Member type="Method">public void setTitle(String title)</Member>
+        <Member type="Method">public String getTaskDescription()</Member>
+        <Member type="Method">public void setTaskDescription(String description)</Member>
+        <Member type="Method">public LocalDate getDeadLine()</Member>
+        <Member type="Method">public void setDeadLine(LocalDate deadLine)</Member>
+        <Member type="Method">public boolean isDone()</Member>
+        <Member type="Method">public void setDone(boolean done)</Member>
+        <Member type="Method">public Person getCreator()</Member>
+        <Member type="Method">public void setCreator(Person person)</Member>
+        <Member type="Method">public boolean isOverdue()</Member>
+        <Member type="Method">public StringBuilder getSummary()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TodoItemTask</Name>
+        <Access>Public</Access>
+        <Location left="251" top="495" />
+        <Size width="241" height="292" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">static int referenceId</Member>
+        <Member type="Field">int id</Member>
+        <Member type="Field">TodoItem todoItem</Member>
+        <Member type="Field">Person assignee</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public boolean isAssigned()</Member>
+        <Member type="Method">public void setAssigned(boolean assigned)</Member>
+        <Member type="Method">public TodoItem getTodoItem()</Member>
+        <Member type="Method">public void setTodoItem(TodoItem todoItem)</Member>
+        <Member type="Method">public Person getAssignee()</Member>
+        <Member type="Method">public void setAssignee(Person person)</Member>
+        <Member type="Method">public StringBuilder getSummary()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
