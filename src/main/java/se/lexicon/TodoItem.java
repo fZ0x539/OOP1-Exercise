@@ -1,6 +1,7 @@
 package se.lexicon;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
     //Fields
@@ -93,26 +94,51 @@ public class TodoItem {
         return (currentDate.isAfter(deadLine));
     }
 
-    public StringBuilder getSummary(){
-        var sb = new StringBuilder();
-        sb.append("TodoItem Summary -> ")
-                .append("Id: ").append(getId())
-                .append(" | Title: ").append(getTitle());
+//    public StringBuilder getSummary(){
+//        var sb = new StringBuilder();
+//        sb.append("TodoItem Summary -> ")
+//                .append("Id: ").append(getId())
+//                .append(" | Title: ").append(getTitle());
+//
+//        if(taskDescription != null){
+//            sb.append(" | Description: ").append(getTaskDescription());
+//        }
+//        if (isDone()){
+//            sb.append(" | Is Done? ").append(isDone());
+//        } else {
+//            sb.append(" | Deadline: ").append(getDeadLine())
+//                    .append("| Is overdue? ").append(isOverdue());
+//        }
+//        if(creator != null){
+//        sb.append(" | Created by: ").append(getCreator().getFirstName());
+//        }
+//
+//        return sb;
+//    }
+    @Override
+    public String toString() {
+        return "TodoItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", deadLine=" + deadLine +
+                ", done=" + done +
+                ", creator=" + creator +
+                "}";
+    }
 
-        if(taskDescription != null){
-            sb.append(" | Description: ").append(getTaskDescription());
-        }
-        if (isDone()){
-            sb.append(" | Is Done? ").append(isDone());
-        } else {
-            sb.append(" | Deadline: ").append(getDeadLine())
-                    .append("| Is overdue? ").append(isOverdue());
-        }
-        if(creator != null){
-        sb.append(" | Created by: ").append(getCreator().getFirstName());
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TodoItem todoItem)) return false;
+        return getId() == todoItem.getId() && isDone() == todoItem.isDone() && getTitle().equals(todoItem.getTitle()) && getTaskDescription().equals(todoItem.getTaskDescription()) && getDeadLine().equals(todoItem.getDeadLine());
+    }
 
-        return sb;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 
 }
+
+

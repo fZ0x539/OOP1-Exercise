@@ -7,11 +7,12 @@
       <Entity type="Class">
         <Name>Person</Name>
         <Access>Public</Access>
-        <Location left="911" top="483" />
-        <Size width="326" height="334" />
+        <Location left="908" top="529" />
+        <Size width="326" height="435" />
         <Collapsed>False</Collapsed>
         <Member type="Field">static int referenceId</Member>
         <Member type="Field">int id</Member>
+        <Member type="Field">private AppUser credentials</Member>
         <Member type="Field">private String firstName</Member>
         <Member type="Field">private String lastName</Member>
         <Member type="Field">private String email</Member>
@@ -29,7 +30,7 @@
       <Entity type="Class">
         <Name>TodoItem</Name>
         <Access>Public</Access>
-        <Location left="561" top="430" />
+        <Location left="496" top="443" />
         <Size width="291" height="426" />
         <Collapsed>False</Collapsed>
         <Member type="Field">static int referenceId</Member>
@@ -57,7 +58,7 @@
       <Entity type="Class">
         <Name>TodoItemTask</Name>
         <Access>Public</Access>
-        <Location left="251" top="495" />
+        <Location left="186" top="508" />
         <Size width="241" height="292" />
         <Collapsed>False</Collapsed>
         <Member type="Field">static int referenceId</Member>
@@ -74,6 +75,35 @@
         <Member type="Method">public StringBuilder getSummary()</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>AppUser</Name>
+        <Access>Public</Access>
+        <Location left="934" top="97" />
+        <Size width="237" height="291" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String username</Member>
+        <Member type="Field">private String password</Member>
+        <Member type="Field">private AppRole role</Member>
+        <Member type="Method">public String getUsername()</Member>
+        <Member type="Method">public void setUsername(String username)</Member>
+        <Member type="Method">public String getPassword()</Member>
+        <Member type="Method">public void setPassword(String password)</Member>
+        <Member type="Method">public AppRole getRole()</Member>
+        <Member type="Method">public void setRole(AppRole role)</Member>
+        <Member type="Method">public boolean equals(Object obj)</Member>
+        <Member type="Method">public int hashCode(Object obj)</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>AppRole</Name>
+        <Access>Public</Access>
+        <Location left="1392" top="97" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>ROLE_APP_USER</Value>
+        <Value>ROLE_APP_ADMIN</Value>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
@@ -81,6 +111,10 @@
         </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>875</X>
+          <Y>749</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
@@ -91,6 +125,116 @@
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>883</X>
+          <Y>940</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>290</X>
+          <Y>837</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Drink</Name>
+        <Access>Public</Access>
+        <Location left="196" top="730" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Burger</Name>
+        <Access>Public</Access>
+        <Location left="418" top="730" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Fries</Name>
+        <Access>Public</Access>
+        <Location left="633" top="730" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Pizza</Name>
+        <Access>Public</Access>
+        <Location left="849" top="730" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FoodItem</Name>
+        <Access>Public</Access>
+        <Location left="527" top="65" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private double price</Member>
+        <Member type="Method">public void getInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OrderItems</Name>
+        <Access>Public</Access>
+        <Location left="981" top="85" />
+        <Size width="206" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String orderId</Member>
+        <Member type="Field">private LocalDateTime orderDate</Member>
+        <Member type="Field">private FoodItem[] items</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="0" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
       </Relationship>
     </Relationships>
   </ProjectItem>

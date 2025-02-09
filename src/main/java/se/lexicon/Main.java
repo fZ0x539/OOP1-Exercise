@@ -36,18 +36,26 @@ public class Main {
         System.out.println(item4.getSummary());*/
 
 
-        var person5 = new Person("Emanuel", "Swedenborg", "emswe@gothenburg.se");
+        var person5 = new Person("Emanuel", "Swedenborg", "emswe@gothenburg.se", "emsweden", "password", AppRole.ROLE_APP_ADMIN);
         var todoItem5 = new TodoItem("Finish the exercise", "finish TodoItemTask", LocalDate.now().plusDays(3), person5);
+        var todoItem6 = new TodoItem("Finish the exercis", "finish TodoItemTask", LocalDate.now().plusDays(3), person5);
         var itemTask1 = new TodoItemTask(todoItem5, person5);
-        System.out.println(itemTask1.getSummary());
+        System.out.println(itemTask1.toString());
+        System.out.println(itemTask1.getAssignee().getCredentials());
 
-        var person6 = new Person("Carl", "Wadström", "cawa@gothenburg.se");
-        var person7 = new Person("Anders", "Knös", "aknö@gothenburg.se");
-        var todoItem6 = new TodoItem("Unit testing", LocalDate.now().plusDays(3), person6);
-        var itemTask2 = new TodoItemTask(todoItem6);
-        System.out.println(itemTask2.getSummary());
-        var itemTask3 = new TodoItemTask(todoItem6, person7);
-        System.out.println(itemTask3.getSummary());
+//        var person6 = new Person("Carl", "Wadström", "cawa@gothenburg.se");
+//        var person7 = new Person("Anders", "Knös", "aknö@gothenburg.se");
+//        var todoItem6 = new TodoItem("Unit testing", LocalDate.now().plusDays(3), person6);
+//        var itemTask2 = new TodoItemTask(todoItem6);
+//        System.out.println(itemTask2.getSummary());
+//        var itemTask3 = new TodoItemTask(todoItem6, person7);
+//        System.out.println(itemTask3.getSummary());
+
+        System.out.println(person5.hashCode());
+        System.out.println(todoItem5.hashCode());
+        System.out.println(todoItem6.hashCode());
+        System.out.println(itemTask1.hashCode());
+
 
 
     }

@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Objects;
+
 public class TodoItemTask {
     //Fields
     private static int referenceId;
@@ -53,18 +55,39 @@ public class TodoItemTask {
     //Methods
 
 
-    public StringBuilder getSummary(){
-        var sb = new StringBuilder();
-        sb.append("Task Summary -> ")
-                .append("\nid: ").append(getId())
-                .append("\nTodoItem: ").append(todoItem.getSummary());
-            if(isAssigned())
-                sb.append("\nAssignee: ").append(assignee.getSummary());
-            else
-                sb.append("\nIs Assigned?: ").append(isAssigned());
+//    public StringBuilder getSummary(){
+//        var sb = new StringBuilder();
+//        sb.append("Task Summary -> ")
+//                .append("\nid: ").append(getId())
+//                .append("\nTodoItem: ").append(todoItem.getSummary());
+//            if(isAssigned())
+//                sb.append("\nAssignee: ").append(assignee.getSummary());
+//            else
+//                sb.append("\nIs Assigned?: ").append(isAssigned());
+//
+//            sb.append("\n");
+//        return sb;
+//    }
+    @Override
+    public String toString() {
+        return "TodoItemTask" + "\n" +
+                "{id=" + id +
+                ", todoItem= " + todoItem + "\n" +
+                ", assignee= " + assignee +
+                ", assigned=" + assigned +
+                "}\n";
+    }
 
-            sb.append("\n");
-        return sb;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getTodoItem());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TodoItemTask todoItemTask)) return false;
+        return getId() == todoItemTask.getId() && isAssigned() == todoItemTask.isAssigned() && getTodoItem().equals(todoItemTask.getTodoItem());
     }
 
 }
